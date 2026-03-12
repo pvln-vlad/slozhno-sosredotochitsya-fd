@@ -4,6 +4,16 @@
 */
 :root {
   --background-image: url('/images/cover-image-dark.png');
+  --font-family: IBM Plex Mono;
+  --page-color: #000028;
+  --title-color: #DB00FF;
+  --accent-color: #FF0070;
+  --accent-color-transparent: rgb(255 0 112 / 0.4);
+  --text-color: #F1B2CE;
+  --text-size: 18px;
+  --text-line-height: 23.4px;
+  --text-shadow-header: 4px 4px 0 var(--accent-color);
+  --text-shadow-footer: 2px 2px 0 var(--accent-color);
 }
 
 @media (prefers-color-scheme: light) {

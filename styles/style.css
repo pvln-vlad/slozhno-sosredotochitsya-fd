@@ -1,11 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-:root {
-  --font-family: IBM Plex Mono;
-  --page-color: #000028;
-  --title-color: #DB00FF;
-  --accent-color: #FF0070;
-  --text-size: 18px;
-}
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
@@ -21,33 +14,62 @@
 @media (768 = width <= 1024px) {
   .page {}
 }
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content min-content;
+}
+
+.header__decorated-zone {
+  position: relative;
+}
+
+
+.header__theme-menu {
+  position: relative;
+}
+
+.header__label {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--text-size);
+  color: var(--accent-color);
+}
+
+.header__label::after {
+  content: "";
+  display: block;
+  align-self: center;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 100%;
+  margin-inline-start: 10px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+  margin-block-start: 75px;
+}
 
 .header__theme-menu-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  justify-self: end;
   font-family: var(--font-family), sans-serif;
   text-transform: lowercase;
-  align-self: center;
-  margin-block-start: 75px;
   block-size: 100%;
   min-block-size: 98px;
   /*border: solid 1px #fff;*/
 }
 
-@media (768 = width <= 1024px) {
-    .header__theme-menu-list {
+.header__theme-menu-item {
 
-  }
-}
-
-button {
-
-}
-
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color);
 }
 
 .header__theme-menu-button {
@@ -63,51 +85,53 @@ button {
   cursor: pointer;
 }
 
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color-transparent);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--accent-color);
+}
+
 .header__theme-menu-button_active {
   outline: 1px solid var(--accent-color);
 }
 
-.decorated-zone {
-  position: relative;
-}
-
-.decorated-zone::before {
+.header__decorated-zone::before {
   content: "";
   position: absolute;
+  top: 10px;
+  right: 0;
   inline-size: 25px;
   block-size: 25px;
   border-block-start: 1px solid var(--accent-color);
   border-inline-end: 1px solid var(--accent-color);
 }
 
-.header__theme-menu-label {
-  display: flex;
-  position: absolute;
-  font-family: var(--font-family), sans-serif;
-  font-size: var(--text-size);
-  color: var(--accent-color);
-}
-
-.header__theme-menu-label::after {
+.header__decorated-zone::after {
   content: "";
-  display: block;
-  align-self: center;
-  inline-size: 9px;
-  block-size: 9px;
-  background-color: var(--accent-color);
-  border-radius: 100%;
-  margin-inline-start: 10px;
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  position: absolute;
+  top: 633px;
+  right: 330px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
 }
 
 .main {
+
+}
+
+.main-section {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr min-content;
   align-items: center;
 }
 
-.main__section-title {
+.section-title {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -116,10 +140,17 @@ button {
   block-size: 100%;
   inline-size: 100%;
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
   line-height: 83%;
   padding-block-start: 65px;
   padding-block-end: 55px;
+}
+
+.main__section .section-title {
+  text-shadow: var(--text-shadow-header);
+}
+
+.main__section-description {
+  margin-block-end: 66px;
 }
 
 @media (width > 768px) {
@@ -134,5 +165,130 @@ button {
   font-weight: bold;
   color: var(--page-color);
   background-color: var(--accent-color);
-  line-height: 23.4px;
+  line-height: var(--text-line-height);
+}
+
+.text__section {
+  font-family: var(--font-family), sans-serif;
+  line-height: var(--text-line-height);
+}
+
+.text__section-padding-10 {
+  padding-block-start: 10px;
+}
+
+.text__section-padding-30 {
+  padding-block-start: 30px;
+}
+
+.text__section-title {
+  font-size: var(--text-size);
+  color: var(--accent-color);
+  padding-block-start: 40px;
+}
+
+.text__section-subtitle {
+  font-size: var(--text-size);
+  background-color: var(--accent-color);
+  margin-block-start: 20px;
+  color: var(--page-color);
+}
+
+h4.text__section-subtitle {
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--text-size);
+  color: var(--page-color);
+}
+
+.text__section-paragraph {
+  font-size: var(--text-size);
+  margin-block-start: 10px;
+  color: var(--text-color);
+}
+
+.link {
+  text-shadow: 3px 1px 0 var(--accent-color);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  block-size: 100vh;
+  min-block-size: 668px;
+  margin-block-start: 40px;
+}
+
+.footer .section-title {
+  text-shadow: var(--text-shadow-footer);
+}
+
+.footer__decorated-zone {
+  position: relative;
+}
+
+.footer__decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+}
+
+.footer__decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: 633px;
+  right: 330px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+}
+
+.footer__label {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--text-size);
+  color: var(--accent-color);
+}
+
+.footer__label::after {
+  content: "";
+  display: block;
+  align-self: center;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 100%;
+  margin-inline-start: 10px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
