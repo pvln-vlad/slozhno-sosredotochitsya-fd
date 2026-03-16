@@ -21,45 +21,47 @@
   <link rel="stylesheet" href="./styles/light.css">
 </head>
 <body class="page">
-<main class="main">
-  <section class="main__section main__decorated-zone">
-    <header class="header">
+<header class="header">
       <span class="header__label">
           REC
       </span>
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <h1 class="section-title">no focus</h1>
-    <p class="main__section-description title-decor">Что делать, когда не можешь делать ничего<br>
-      Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
-  </section>
-  <div class="text-and-gallery">
-    <section class="text__section">
+  <nav class="header__theme-menu">
+    <ul class="header__theme-menu-list">
+      <li class="header__theme-menu-item">
+        <button
+          class="header__theme-menu-button header__theme-menu-button_type_light"
+        >
+          День
+        </button>
+      </li>
+      <li class="header__theme-menu-item">
+        <button
+          class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
+          disabled
+        >
+          Авто
+        </button>
+      </li>
+      <li class="header__theme-menu-item">
+        <button
+          class="header__theme-menu-button header__theme-menu-button_type_dark"
+        >
+          Неон
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div class="header__main">
+    <div class="header__main--section header__main--decorated-zone">
+      <h1 class="section-title">no focus</h1>
+      <p class="header__main--section-description title-decor">Что делать, когда не можешь делать ничего<br>
+        Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
+    </div>
+  </div>
+</header>
+<main class="main">
+  <section class="text-and-gallery">
+    <div class="text__section">
       <h2 class="text__section-title">Почему сосредоточиться так сложно</h2>
       <div class="text__section-content-column">
         <h3 class="text__section-subtitle">Многозадачность</h3>
@@ -78,7 +80,7 @@
           мозгов. Например, смотрим лайки в соцсетях. В это время и выделяется дофамин — и мы чувствуем удовольствие.
           Получается замкнутый круг: чем больше отвлекаешься, тем больше удовольствия получаешь.</p>
       </div>
-    </section>
+    </div>
     <section class="text__section">
       <h2 class="text__section-title">Что снижает концентрацию внимания?</h2>
       <div class="text__section-content-row">
@@ -160,10 +162,10 @@
         <img class="street" src="images/street.png" alt="улица" loading="lazy">
       </div>
     </section>
-  </div>
-  <footer class="footer footer__decorated-zone">
-    <h2 class="section-title">focus</h2>
-  </footer>
+  </section>
 </main>
+<footer class="footer footer__decorated-zone">
+  <h2 class="section-title">focus</h2>
+</footer>
 </body>
 </html>
