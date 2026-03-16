@@ -10,16 +10,13 @@
   background-color: var(--page-color);
 }
 
-.page__padding {
-  padding-inline: 10px;
-}
-
 .header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content;
   block-size: 100vh;
   min-block-size: 668px;
+  padding-inline: 10px;
 }
 
 .header__theme-menu {
@@ -138,6 +135,10 @@
   margin-block-end: 66px;
 }
 
+.main {
+  padding-inline: 10px;
+}
+
 .title-decor {
   font-family: var(--font-family), sans-serif;
   font-size: var(--text-size);
@@ -229,6 +230,7 @@ h4.text__section-subtitle {
   block-size: 100vh;
   min-block-size: 668px;
   margin-block-start: 40px;
+  padding-inline: 10px;
 }
 
 .footer .section-title {
@@ -243,7 +245,7 @@ h4.text__section-subtitle {
   content: "";
   position: absolute;
   top: 10px;
-  right: 0;
+  right: 10px;
   inline-size: 25px;
   block-size: 25px;
   border-block-start: 1px solid var(--accent-color);
@@ -253,7 +255,7 @@ h4.text__section-subtitle {
 .footer__decorated-zone::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 10px;
   bottom: 10px;
   inline-size: 25px;
   block-size: 25px;
@@ -284,12 +286,9 @@ h4.text__section-subtitle {
 }
 
 @media (width >= 768px) {
-  .page__padding {
-    padding-inline: 20px;
-  }
-
   .header {
     grid-column: 2;
+    padding-inline: 20px;
   }
 
   .header__theme-menu {
@@ -340,8 +339,9 @@ h4.text__section-subtitle {
     margin-block-end: 243px;
   }
 
-  main {
+  .main {
     margin-block-start: 60px;
+    padding-inline: 20px;
   }
 
   .text-and-gallery {
@@ -415,6 +415,7 @@ h4.text__section-subtitle {
     position: relative;
     min-height: 1024px;
     margin-block-start: 60px;
+    padding-inline: 20px;
   }
 
   .footer__decorated-zone::before {
@@ -527,6 +528,7 @@ h4.text__section-subtitle {
   .footer {
     min-block-size: 100vh;
     block-size: 768px;
+    padding-inline: 20px;
   }
 
 
@@ -534,8 +536,13 @@ h4.text__section-subtitle {
     text-shadow: var(--text-shadow-footer);
   }
 
+  .footer__decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
   .footer__decorated-zone::after {
     bottom: 20px;
-    left: 0;
+    left: 20px;
   }
 }
