@@ -6,14 +6,23 @@
   --background-image: url('/images/cover-image-dark.png');
   --font-family: IBM Plex Mono;
   --page-color: #000028;
-  --title-color: #DB00FF;
+
+  --button-text-color: #FF0070;
+  --main-title-color: #DB00FF;
+  --main-description-color: #000028;
+  --main-description-bg-color: #FF0070;
+
+  --title-color: #FF0070;
+  --subtitle-color: #000028;
+  --text-color: #F1B2CE;
+  --link-color: #FF0070;
+  --text-shadow-header: 4px 4px 0 #FF0070;
+  --text-shadow-footer: 2px 2px 0 #FF0070;
+
   --accent-color: #FF0070;
   --accent-color-transparent: rgb(255 0 112 / 0.4);
-  --text-color: #F1B2CE;
   --text-size: 18px;
   --text-line-height: 23.4px;
-  --text-shadow-header: 4px 4px 0 var(--accent-color);
-  --text-shadow-footer: 2px 2px 0 var(--accent-color);
 }
 
 @media (prefers-color-scheme: light) {

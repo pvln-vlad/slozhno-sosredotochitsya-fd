@@ -59,7 +59,6 @@
   text-transform: lowercase;
   block-size: 100%;
   min-block-size: 98px;
-  /*border: solid 1px #fff;*/
 }
 
 .header__theme-menu-button {
@@ -69,7 +68,7 @@
   inline-size: 70px;
   block-size: 26px;
   background-color: transparent;
-  color: #FF0070;
+  color: var(--button-text-color);
   text-transform: lowercase;
   font-size: var(--text-size);
   cursor: pointer;
@@ -102,8 +101,8 @@
 .header__decorated-zone::after {
   content: "";
   position: absolute;
-  top: 633px;
-  right: 330px;
+  bottom: 10px;
+  left: 0;
   inline-size: 25px;
   block-size: 25px;
   border-block-end: 1px solid var(--accent-color);
@@ -125,7 +124,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   block-size: 100%;
   inline-size: 100%;
-  color: var(--title-color);
+  color: var(--main-title-color);
   line-height: 83%;
   padding-block-start: 65px;
   padding-block-end: 55px;
@@ -143,8 +142,8 @@
   font-family: var(--font-family), sans-serif;
   font-size: var(--text-size);
   font-weight: bold;
-  color: var(--page-color);
-  background-color: var(--accent-color);
+  color: var(--main-description-color);
+  background-color: var(--main-description-bg-color);
   line-height: var(--text-line-height);
 }
 
@@ -165,14 +164,14 @@
 
 .text__section-title {
   font-size: var(--text-size);
-  color: var(--accent-color);
+  color: var(--title-color);
 }
 
 .text__section-subtitle {
   font-size: var(--text-size);
-  background-color: var(--accent-color);
+  background-color: var(--main-description-bg-color);
   margin-block-start: 20px;
-  color: var(--page-color);
+  color: var(--subtitle-color);
 }
 
 .gallery .text__section-subtitle {
@@ -182,7 +181,7 @@
 h4.text__section-subtitle {
   font-family: var(--font-family), sans-serif;
   font-size: var(--text-size);
-  color: var(--page-color);
+  color: var(--subtitle-color);
 }
 
 .text__section-paragraph {
@@ -192,7 +191,7 @@ h4.text__section-subtitle {
 }
 
 .link {
-  text-shadow: 3px 1px 0 var(--accent-color);
+  text-shadow: 3px 1px 0 var(--link-color);
 }
 
 .link:hover {
@@ -354,6 +353,8 @@ h4.text__section-subtitle {
 
   .text__section-content-row {
     grid-column-start: span 2;
+    display: grid;
+    gap: 20px;
   }
 
   .text__section-subtitle:nth-child(1) {
@@ -401,8 +402,6 @@ h4.text__section-subtitle {
   }
 
   .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     min-block-size: 1024px;
     margin-block-start: 60px;
   }
@@ -413,8 +412,8 @@ h4.text__section-subtitle {
   }
 
   .footer__decorated-zone::after {
-    top: 979px;
-    right: 703px;
+    bottom: 10px;
+    left: 0;
   }
 
   .footer .section-title {
@@ -425,5 +424,100 @@ h4.text__section-subtitle {
 }
 
 @media (width >= 1024px) {
+  .page {
+    padding-inline: 20px;
+  }
 
+  .header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    margin-block-start: 20px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    justify-content: center;
+    min-block-size: 26px;
+  }
+
+  .header__label {
+    top: 20px;
+    right: 10px;
+  }
+
+  .header__decorated-zone::before {
+    top: 20px;
+  }
+
+  .header__decorated-zone::after {
+    bottom: 20px;
+    left: 0;
+  }
+
+  .main__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    padding-block-start: 273px;
+    padding-block-end: 0;
+    margin-inline: -20px;
+  }
+
+  .main__section .section-title,
+  .footer .section-title {
+    grid-column: 1 / -1;
+  }
+
+  .main__section-description {
+    grid-column-start: 2;
+    grid-row: 2;
+    margin-block-start: 114px;
+    margin-block-end: 194px;
+  }
+
+  .text-and-gallery {
+    gap: 80px;
+  }
+
+  .text__section:nth-child(1) {
+    margin-block-start: 0;
+  }
+
+  .text__section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    font-family: var(--font-family), sans-serif;
+    line-height: var(--text-line-height);
+  }
+
+  .text__section-content-column {
+    grid-column-start: 2;
+  }
+
+  .text__section-content-row {
+    grid-column-start: span 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer .section-title {
+    text-shadow: var(--text-shadow-footer);
+  }
+
+  .footer__decorated-zone::after {
+    top: 723px;
+    right: 959px;
+  }
 }
