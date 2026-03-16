@@ -3,9 +3,6 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-.header__label {
-  display: none;
-}
 
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
@@ -56,5 +53,9 @@
 
     --accent-color: #FF0070;
     --accent-color-transparent: rgb(255 0 112 / 0.4);
+  }
+
+  .header__label {
+    display: none;
   }
 }
