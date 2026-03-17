@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="./styles/light.css">
 </head>
 <body class="page">
-<header class="header">
+<header class="header decorated-zone">
       <span class="header__label">
           REC
       </span>
@@ -52,7 +52,7 @@
     </ul>
   </nav>
   <div class="header__main">
-    <div class="header__main--section header__main--decorated-zone">
+    <div class="header__main--section">
       <h1 class="section-title">no focus</h1>
       <p class="header__main--section-description title-decor">Что делать, когда не можешь делать ничего<br>
         Или почему нам так сложно сконцентрироваться, особенно когда очень надо</p>
@@ -60,10 +60,9 @@
   </div>
 </header>
 <main class="main">
-  <section class="text-and-gallery">
-    <div class="text__section">
+    <section class="text__section">
       <h2 class="text__section-title">Почему сосредоточиться так сложно</h2>
-      <div class="text__section-content-column">
+      <div class="text__section-wrapper">
         <h3 class="text__section-subtitle">Многозадачность</h3>
         <p class="text__section-paragraph">Особенно сложно сосредоточиться, когда задач много и все они — важные.
           Где же легендарная многозадачность, когда она так нужна вам (и всем нанимающим менеджерам этого мира)? А дело
@@ -80,10 +79,10 @@
           мозгов. Например, смотрим лайки в соцсетях. В это время и выделяется дофамин — и мы чувствуем удовольствие.
           Получается замкнутый круг: чем больше отвлекаешься, тем больше удовольствия получаешь.</p>
       </div>
-    </div>
+    </section>
     <section class="text__section">
       <h2 class="text__section-title">Что снижает концентрацию внимания?</h2>
-      <div class="text__section-content-row">
+      <div class="text__section-group">
         <div class="text__section-card">
           <h3 class="text__section-subtitle">Концентрация</h3>
           <p class="text__section-paragraph">Как концентрация может снижаться из-за… концентрации? Любая стрессовая
@@ -117,7 +116,7 @@
     </section>
     <section class="text__section">
       <h2 class="text__section-title">Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)</h2>
-      <div class="text__section-content-column">
+      <div class="text__section-wrapper">
         <h3 class="text__section-subtitle">5 простых (на самом деле не очень) советов</h3>
         <h4 class="text__section-subtitle">Представьте небо и облака</h4>
         <p class="text__section-paragraph">Или листья в ручье. Тут дело в лёгкой медитации, которая помогает
@@ -153,7 +152,7 @@
       </div>
     </section>
     <section class="gallery">
-      <h4 class="text__section-subtitle">А можно в картинках?</h4>
+      <h2 class="text__section-subtitle">А можно в картинках?</h2>
       <div class="gallery__container">
         <img class="sunset" src="images/sunset.png" alt="закат" loading="lazy">
         <img class="ice-cream" src="images/ice-cream.png" alt="мороженое" loading="lazy">
@@ -162,9 +161,8 @@
         <img class="street" src="images/street.png" alt="улица" loading="lazy">
       </div>
     </section>
-  </section>
 </main>
-<footer class="footer footer__decorated-zone">
+<footer class="footer decorated-zone">
   <h2 class="section-title">focus</h2>
 </footer>
 </body>

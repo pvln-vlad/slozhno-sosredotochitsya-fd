@@ -3,7 +3,7 @@
   и их переопределение под различные устройства
 */
 :root {
-  --background-image: url('/images/cover-image-dark.png');
+  --background-image: url('../images/cover-image-dark.png');
   --font-family: IBM Plex Mono;
   --page-color: #000028;
 
@@ -23,10 +23,4 @@
   --accent-color-transparent: rgb(255 0 112 / 0.4);
   --text-size: 18px;
   --text-line-height: 23.4px;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background-image: url('/images/cover-image-light.png');
-  }
 }
