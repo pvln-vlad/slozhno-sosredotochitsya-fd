@@ -14,17 +14,18 @@
 .header {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content;
+  grid-template-rows: 1fr min-content 1fr;
+  row-gap: 65px;
   block-size: 100vh;
   min-block-size: 668px;
   padding-inline: 10px;
+  align-items: center;
 }
 
 .header__theme-menu {
   position: relative;
   justify-self: end;
-  align-self: center;
-  margin-block-start: 75px;
+  align-self: end;
 }
 
 .header__label {
@@ -85,25 +86,14 @@
   outline: 1px solid var(--accent-color);
 }
 
-.header__main--section {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr min-content;
-  align-items: center;
-}
-
 .section-title {
   display: flex;
-  align-items: center;
-  justify-content: start;
   font-family: var(--font-family), sans-serif;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   block-size: 100%;
   inline-size: 100%;
   color: var(--main-title-color);
   line-height: 83%;
-  padding-block-start: 65px;
-  padding-block-end: 55px;
 }
 
 .header__main--section .section-title {
@@ -111,7 +101,9 @@
 }
 
 .header__main--section-description {
-  margin-block-end: 66px;
+  align-self: start;
+  margin-block-start: -10px;
+
 }
 
 .main {
@@ -199,8 +191,6 @@ h4.text__section-subtitle {
 .footer {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
   block-size: 100vh;
   min-block-size: 668px;
   margin-block-start: 40px;
@@ -208,6 +198,7 @@ h4.text__section-subtitle {
 }
 
 .footer .section-title {
+  align-items: center;
   text-shadow: var(--text-shadow-footer);
 }
 
@@ -238,13 +229,16 @@ h4.text__section-subtitle {
 }
 
 @media (width >= 768px) {
+
   .header {
-    grid-column: 2;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     padding-inline: 20px;
+    row-gap: 75px;
   }
 
   .header__theme-menu {
-    margin-block-start: 192px;
+    grid-column: 2;
   }
 
   .header__label {
@@ -262,18 +256,12 @@ h4.text__section-subtitle {
     left: 20px;
   }
 
-  .header__main--section {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content 162px 1fr;
-    padding-block-start: 173px;
-  }
-
   .section-title {
-    grid-row: 1;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    align-items: start;
-    padding-block-start: 0;
-    padding-block-end: 0;
+    grid-row: 2;
+    grid-column: span 2;
+    align-items: center;
+    padding-block: 0;
     margin-inline: -20px;
   }
 
@@ -285,8 +273,7 @@ h4.text__section-subtitle {
   .header__main--section-description {
     grid-column: 2;
     grid-row: 3;
-    align-self: end;
-    margin: 0;
+    align-self: start;
   }
 
   .main {
@@ -314,10 +301,6 @@ h4.text__section-subtitle {
     margin-block-start: -20px;
   }
 
-  .text__section-paragraph {
-    margin-block-start: 10px;
-  }
-
   .gallery__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -328,7 +311,6 @@ h4.text__section-subtitle {
 
   .gallery__container img {
     block-size: 100%;
-    object-fit: cover;
   }
 
   .sunset {
@@ -359,6 +341,7 @@ h4.text__section-subtitle {
     padding-block-start: 0;
     justify-content: center;
     align-items: center;
+    margin-inline: 0;
   }
 }
 
@@ -369,6 +352,8 @@ h4.text__section-subtitle {
   }
 
   .header__theme-menu {
+    grid-column: span 2;
+    align-self: start;
     justify-self: center;
     margin-block-start: 20px;
   }
@@ -379,36 +364,15 @@ h4.text__section-subtitle {
     min-block-size: 26px;
   }
 
-  .header__label {
-    top: 20px;
-    right: 30px;
-  }
-
   .header__main--section {
     grid-template-rows: min-content 114px 1fr;
-    padding-block-start: 273px;
-  }
-
-  /*  .section-title {
-      font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-      padding-block-end: 0;
-      margin-inline: -20px;
-    }*/
-  .header__main--section .section-title,
-  .footer .section-title {
-    grid-column: 1 / -1;
   }
 
   .header__main--section-description {
     grid-column: 2;
     grid-row: 3;
-    align-self: end;
+    align-self: start;
     margin: 0;
-  }
-
-  .main {
-    gap: 80px;
-    margin-block-start: 60px;
   }
 
   .text__section-group {
@@ -419,9 +383,5 @@ h4.text__section-subtitle {
   .footer {
     min-block-size: 768px;
     block-size: 100vh;
-  }
-
-  .footer .section-title {
-    text-shadow: var(--text-shadow-footer);
   }
 }
