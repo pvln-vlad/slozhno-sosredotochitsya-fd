@@ -28,3 +28,13 @@
   --accent-color: #FF0070;
   --accent-color-transparent: rgb(255 0 112 / 0.4);
 }
+
+:root.theme-dark .header__label {
+  display: flex;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) .header__label {
+    display: flex;
+  }
+}
